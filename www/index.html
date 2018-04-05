@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1,
+width=device-width, height=device-height, target-densitydpi=device-dpi" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="msapplication-tap-highlight" content="no" />
+        
+        <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans+Condensed:400i" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300" rel="stylesheet">
+        
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        
+        <!--Link the materialize style sheet http://materializecss.com/getting-started.html-->
+        <!-- all css and styling comes from materialize css file http://materializecss.com/about.html -->
+        
+        <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+        
+        <title>FitU</title>
+        
+       
+        <link  rel="stylesheet" href="css/kendo.mobile.all.css">
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+    <body>
+        
+        
+        <section data-role="layout" data-id="timer">
+        
+        <header data-role="header">
+        <div data-role="header">
+            <div data-role="navbar" style="background-color: #e0f2f1">
+                
+                <a data-role="backbutton" data-align="left" href="select"></a>
+                <span data-role="viewtitle">Timer</span>
+                
+                
+               
+                
+                
+
+               
+            </div>
+        </div>
+        </header>
+        
+        </section>
+        <section data-role="layout" data-id="selection"></section>
+        <section data-role="layout" data-id="saved">
+            
+          
+        
+        
+        <header data-role="header">
+        <div data-role="header">
+            <div data-role="navbar" style="background-color: #e0f2f1">
+                
+                <a data-role="backbutton" data-align="left" href="results"></a>
+                <span data-role="viewtitle">Saved Workouts</span>
+                
+                
+               
+                
+                
+
+               
+            </div>
+        </div>
+        </header>
+        
+        
+        
+        
+        </section>
+        
+        
+        <section data-role="layout" data-id="lastWorkout">
+     
+        <header data-role="header">
+        <div data-role="header">
+            <div data-role="navbar" style="background-color: #e0f2f1">
+                
+                
+                
+                
+                
+                <span data-role="viewtitle">Last Workout</span>
+                
+               <a data-role="button" data-align="right" href="saved" data-icon="organize"></a>
+                
+                
+
+               
+            </div>
+        </div>
+        </header>
+     
+            
+        </section>
+        
+        <div data-role="view" data-layout="selection" id="select" data-transition="overlay:up">
+            <style>
+            
+                #select
+                .km-content{
+                    background-color: #5CA4A9;
+                }
+                
+            
+            </style>
+            
+            
+            <!-- Cards used from materialize framework: http://materializecss.com/cards.html -->
+            
+            <h1>Select an Activity.</h1>
+            
+            <div class="workouts">
+            <div class="row">
+        <div class="col s12 m7">
+          <div class="card teal lighten-5">
+            <div class="card-image">
+              <img src="images/walking.jpg"> <!-- https://www.goodthingsguy.com/people/south-african-walking-limpopo-cape-town/ -->
+              <span class="card-title">Walk</span>
+            </div>
+            <div class="card-content" id="content">
+              <p><button id="startTime" class="choice2">Start</button></p>
+            </div>
+            <div class="card-action">
+              <a  href="#" onclick="window.open('https://www.participaction.com/en-ca/blog/lifestyle-culture/the-beginner%E2%80%99s-guide-to-walking-for-people-who-aren%27t-into-working-out', '_system', 'location=yes');">Beginners Guide to Walking for Fitness.</a>
+            </div>
+          </div>
+        </div>
+      </div>
+                
+                
+                
+            <div class="row">
+        <div class="col s12 m7">
+          <div class="card teal lighten-5">
+            <div class="card-image">
+              <img src="images/run.jpg"> <!-- https://runningmagazine.ca/fartlek-training/ -->
+              <span class="card-title">Run</span>
+            </div>
+            <div class="card-content" id="content">
+               <button id="startRun" class="choice2">Start</button>
+            </div>
+            <div class="card-action">
+              <a href="#" onclick="window.open('https://www.fitnessmagazine.com/workout/running/running-101-a-beginners-guide/', '_system', 'location=yes');">Beginners Guide to running.</a>
+            </div>
+          </div>
+        </div>
+      </div>
+                
+        <div class="row">
+        <div class="col s12 m7">
+          <div class="card teal lighten-5">
+            <div class="card-image">
+              <img src="images/Yoga.jpg"> <!-- https://www.mtlblog.com/best-of-mtl/best-montreal-yoga-studios -->
+              <span class="card-title">Yoga</span>
+            </div>
+            <div class="card-content" id="content">
+                <button id="startYoga" class="choice2">Start</button>
+            </div>
+            <div class="card-action">
+              <a href="#" onclick="window.open('https://www.fitnessmagazine.com/workout/yoga/?page=1', '_system', 'location=yes');">beginners guide to yoga.</a>
+            </div>
+          </div>
+        </div>
+      </div>
+          
+                
+                
+           <div class="row">
+        <div class="col s12 m7">
+          <div class="card teal lighten-5">
+            <div class="card-image">
+              <img src="images/jumpingjacks.jpg"> <!-- Image from https://www.livestrong.com/article/437561-alternatives-to-jumping-jacks/ -->
+              <span class="card-title">Calisthenics</span>
+            </div>
+            <div class="card-content" id="content">
+                 <button id="startJacks" class="choice2">Start</button>
+            </div>
+            <div class="card-action">
+              <a href="#" onclick="window.open('https://blog.biostrap.com/posts/the-ultimate-beginners-7-day-guide-to-calisthenics', '_system', 'location=yes');">Beginners Guide to Calthesthics.</a>
+            </div>
+          </div>
+        </div>
+      </div>
+          
+                
+         
+            
+                
+          
+            </div>
+            
+        
+
+            
+        
+        </div>
+        
+        
+     
+        
+        
+        
+         <div data-role="view" data-layout="lastWorkout" id="results" data-transition="slide">
+             
+             
+             
+             
+             
+             <br>
+             
+             
+             
+             <input type="button" value="+" class="resetWork" id="resetWork">
+        
+             <br>
+             
+        
+             
+             
+        <style >
+            
+                #results
+                .km-content{
+                    background-color: #5CA4A9;
+                }
+                
+            
+            </style>     
+             
+             
+             
+             
+             <div class="card teal lighten-5">
+    <div class="card-image waves-effect waves-block waves-light">
+      <div class="activator" id="result"></div>
+    </div>
+    <div class="card-content">
+      <span id="cardTitle" class="card-title activator grey-text text-darken-4"><i class="material-icons right">more_vert</i></span>
+      <p><a id="descript" href="#">Time: </a></p>
+    </div>
+    <div class="card-reveal">
+      <span class="card-title grey-text text-darken-4">Stats<i class="material-icons right">close</i></span>
+        <div>
+            
+       <p class="resultSTATS" id="mood">Mood: </p>
+            
+       <p class="resultSTATS" id="Cals">Calories Burned: </p>
+            
+       <p class="resultsSTATS" id="date">Date: </p> 
+            
+       <p class="resultSTATS" id="journal">Journal: </p>    
+        </div>
+            
+        <div>
+      <button id="journalSubmit" class="choice2" type="button" value="Add Journal Entry" >Add a Journal Entry!</button>
+        
+        </div> 
+    </div>
+  </div>
+             
+             
+             
+             
+             
+        </div>
+        
+        <div data-role="view" data-layout="timer" id="time" data-transition="overlay:up">
+            
+            <style >
+            
+                #time
+                .km-content{
+                    background-color: #5CA4A9;
+                }
+                
+            
+            </style>
+        
+        <div class="timer">
+            
+          
+            <div class="nums">
+             <span id="min"></span> M
+             <span id="sec"></span> S 
+            </div>    
+            
+            <div class="save">
+                
+            <input class="button" id="startButton" type="button" value="Start">
+                
+           <input class="button2" type="button" value="Stop Workout" id="myBtn">
+            </div>
+            
+            </div>
+        
+        <div id="myModal" class="popup">
+
+            <!-- Pop-up mood selector -->
+            <div class="modal-text">
+            <span class="close">&times;</span>
+            <h4>How did that feel?</h4>    
+            <div class="modalBTNS">    
+            <input type="button" value="Awful" class="choice2" id="setmoodBad">
+                <br>
+            <input type="button" value="Bad" class="choice2" id="setmoodKBad">
+                <br>
+            <input type="button" value="Meh" class="choice2" id="setmoodMeh">
+                <br>
+            <input type="button" value="Good" class="choice2" id="setmoodGood">
+                <br>
+            <input type="button" value="Great" class="choice2" id="setmoodGreat">
+                </div>
+            </div>
+
+            </div>
+            
+            
+            
+  
+          
+            
+        </div>
+        
+        <!-- section for saved workouts -->
+        
+        
+        <div data-role="view" data-layout="saved" id="saved">
+        
+        
+            
+            
+            
+           <div class="card">
+    <div class="card-image waves-effect waves-block waves-light">
+      <img class="activator" src="images/run.jpg"> <!-- profile image src: https://www.sitepoint.com/premium/books/full-stack-javascript-development-with-mean/preview/using-mongodb-and-mongoose-in-our-sample-app-53647db -->
+    </div>
+    <div class="card-content">
+      <span class="card-title activator grey-text text-darken-4">Run<i class="material-icons right">more_vert</i></span>
+      <p><a href="#">Saved Workouts would be placed here for user to reference.</a></p>
+    </div>
+    <div class="card-reveal">
+      <span class="card-title grey-text text-darken-4">Card Title<i class="material-icons right">close</i></span>
+      <p>Same information as "Last Workout" would be printed here.(Date, calories burned, jounral)</p>
+    </div>
+  </div>
+            
+            
+            <div class="card">
+    <div class="card-image waves-effect waves-block waves-light">
+      <img class="activator" src="images/Yoga.jpg"> <!-- profile image src: https://www.sitepoint.com/premium/books/full-stack-javascript-development-with-mean/preview/using-mongodb-and-mongoose-in-our-sample-app-53647db -->
+    </div>
+    <div class="card-content">
+      <span class="card-title activator grey-text text-darken-4">Yoga<i class="material-icons right">more_vert</i></span>
+      <p><a href="#">Saved Workouts would be placed here for user to reference.</a></p>
+    </div>
+    <div class="card-reveal">
+      <span class="card-title grey-text text-darken-4">Yoga<i class="material-icons right">close</i></span>
+      <p>Same information as "Last Workout" would be printed here.(Date, calories burned, jounral) </p>
+    </div>
+  </div>
+            
+        
+        
+        
+        </div>
+        
+        
+        
+        
+        
+        <script src="js/jquery.min.js"></script>
+        <script src="js/kendo.ui.core.min.js"></script>
+      
+        <script>
+            var app = new kendo.mobile.Application();
+        </script>
+        
+        <script src="js/scripts.js"></script>
+        <script type="text/javascript" src="js/materialize.min.js"></script>
+   
+        <script type="text/javascript" src="cordova.js"></script>        
+    </body>
+</html>
